@@ -3,17 +3,17 @@ import { ListGroupItem } from 'react-bootstrap';
 import EmpleadosAvatar from './EmpleadosAvatar';
 import Badge from 'react-bootstrap/Badge';
 
-const EmpleadosRow = () => {
+const EmpleadosRow = ({persona}) => {
+    const {department, fullName, pic, title} = {...persona}
+
     return (
-        <div>
-            <ListGroupItem>
-                <EmpleadosAvatar></EmpleadosAvatar>
-                <div>
-                    <h4>nombre</h4>
-                    <p>posicion <Badge bg="info">cargo</Badge> </p>
-                </div>
-            </ListGroupItem>
-        </div>
+        <ListGroupItem className='d-flex'>
+            <EmpleadosAvatar imagen={pic}></EmpleadosAvatar>
+            <div>
+                <h4>{fullName}</h4>
+                <p>{title} <Badge bg="info">{department}</Badge> </p>
+            </div>
+        </ListGroupItem>
     );
 };
 

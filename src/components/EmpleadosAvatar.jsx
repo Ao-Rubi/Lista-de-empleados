@@ -1,9 +1,9 @@
 import React from 'react';
 
-const EmpleadosAvatar = () => {
+const EmpleadosAvatar = (props) => {
     return (
         <div>
-            <img src="" alt="empleado" />
+            <img src={props.imagen} alt={props.imagen} />
         </div>
     );
 };
